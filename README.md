@@ -2,7 +2,7 @@
 
 An end-to-end Machine Learning Operations (MLOps) project for predicting customer churn and demonstrating how an ML model can be validated, trained, tracked, quality-gated, versioned, monitored, and selectively deployed.
 
-**GitHub repository:** [jnaneswar077/churn-prediction-mlops](https://github.com/jnaneswar077/churn-prediction-mlops)
+**GitHub repository:** [jnaneswar077/churn-prediction-mlops](https://github.com/parisarithvikavenkatasai/churn-prediction-mlops)
 **Primary branch:** `main`
 **Project status:** Labs 1–13 integrated. The core monitoring-to-retraining workflow has been executed successfully through GitHub Actions on a self-hosted Windows runner. Scheduled execution is configured; the runner currently uses interactive mode, so the machine and runner process must remain available.
 
@@ -534,3 +534,4 @@ Additional documents are maintained in `docs/`:
 ## Final Summary
 
 This project demonstrates an MLOps lifecycle from data ingestion and validation to training, tracking, quality gates, model lifecycle decisions, inference, monitoring, and conditional deployment. The recorded integration test shows the system can process a new batch and safely reject a candidate that does not outperform the current Production model. GitHub Actions automation is integrated with a self-hosted Windows runner; unattended scheduling remains dependent on keeping that runner and its local services available.
+
