@@ -1,0 +1,46 @@
+# Environments
+venv/
+env/
+__pycache__/
+.ipynb_checkpoints/
+
+# Ignore ALL data files
+data/raw/*.csv
+!data/raw/churn.csv
+data/processed/*.npy
+
+# Ignore model artifacts
+models/*.pkl
+
+logs/
+outputs/
+
+.vscode/
+
+# Ignore MLflow tracking data and databases
+mlruns/
+mlflow.db
+
+# Ignore locally generated artifact plots and reports
+artifacts/
+# Customer data and generated datasets
+data/
+
+# Model binaries and deployment backups
+models/
+deployment/*.pkl
+deployment/backup_before_lab10_*/
+
+# Generated monitoring and inference artifacts
+outputs/
+logs/
+artifacts/
+mlruns/
+mlflow.db
+
+# Python cache
+*.pyc
+
+# Temporary development helpers
+api/temp.py
+src/temp_manage_registry.py

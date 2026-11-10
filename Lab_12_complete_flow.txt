@@ -1,0 +1,46 @@
+================================================================================
+LAB 12 - CONTINUOUS MONITORING, DRIFT DETECTION & AUTOMATED RETRAINING FLOW
+================================================================================
+
+1. OBJECTIVES:
+   - Monitor API performance and live prediction requests.
+   - Simulate and detect Data Drift (KS-Test on numerical features).
+   - Detect Prediction & Probability Drift (KS-Test on model output distributions).
+   - Detect Concept Drift & Performance Metric Degradation.
+   - Run Comprehensive Drift Analysis & Retraining Triggers.
+   - Retrain candidate models and promote via MLflow Model Registry if Quality Gate is passed.
+
+2. LAB 12 PIPELINE EXECUTION SEQUENCE:
+   Stage 1: Generate Evolved & Drift Datasets
+     - python src/mlops_pipeline/12_create_evolved_dataset.py
+     - python src/mlops_pipeline/12_create_concept_drift_dataset.py
+     - python src/mlops_pipeline/12_create_updated_dataset.py
+
+   Stage 2: API & Prediction Logging
+     - python src/mlops_pipeline/12_request_history.py
+     - python src/mlops_pipeline/12_api_performance_monitoring.py
+     - python src/mlops_pipeline/12_prediction_monitoring.py
+
+   Stage 3: Drift Detection & Statistical Testing
+     - python src/mlops_pipeline/12_data_drift.py
+     - python src/mlops_pipeline/12_prediction_drift.py
+     - python src/mlops_pipeline/12_concept_drift.py
+     - python src/mlops_pipeline/12_drift_analysis.py
+
+   Stage 4: Performance Trend & Model Comparison
+     - python src/mlops_pipeline/12_performance_monitoring.py
+     - python src/mlops_pipeline/12_performance_trend.py
+     - python src/mlops_pipeline/12_model_comparison.py
+
+   Stage 5: Retraining Trigger & Lifecycle Promotion
+     - python src/mlops_pipeline/12_monitor_trigger.py
+     - python src/mlops_pipeline/12_retrain_model.py
+     - python src/mlops_pipeline/12_update_mlflow_registry.py
+     - python src/mlops_pipeline/deploy_if_promoted.py
+
+3. TRIGGER CONDITIONS:
+   - If drift is detected AND new_churn.csv batch is available:
+       -> Pipeline ingests new batch, archives previous version, trains candidate model.
+   - If candidate Recall >= 0.70 and outperforms Production:
+       -> Promoted to Production and exported to deployment/model.pkl.
+================================================================================

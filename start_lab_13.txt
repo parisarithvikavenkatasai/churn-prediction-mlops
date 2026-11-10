@@ -1,0 +1,25 @@
+================================================================================
+LAB 13: END-TO-END MLOPS INTEGRATION & CI/CD PIPELINE
+================================================================================
+
+1. PREREQUISITES:
+   - Ensure Lab 11 (Docker containerization & K8s) and Lab 12 (Monitoring & Drift) are complete.
+   - Start local Docker Desktop and ensure Kubernetes cluster is accessible.
+   - Verify self-hosted GitHub Actions runner is online.
+
+2. RUNNING LAB 13 END-TO-END PIPELINE:
+   - Automated Trigger:
+     Run workflow via GitHub Actions:
+     Actions -> "Lab 13 - End-to-End MLOps" -> "Run workflow" (branch: main)
+
+   - Manual Local Run:
+     python src/mlops_pipeline/churn_prediction_pipeline.py --force
+
+3. ARTIFACTS & LOGS PRODUCED:
+   - Pipeline run log: logs/churn_prediction_pipeline_run_log.json
+   - Ingestion status: artifacts/data_load_report.json
+   - Lifecycle report: reports/lifecycle_report.json
+   - Deployment status: reports/deployment_automation_report.json
+   - Documentation: docs/LAB13_END_TO_END.md
+
+================================================================================
